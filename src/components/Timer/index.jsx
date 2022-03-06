@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setResult, resetTime, decrementTime, incrementIndex, setEndGame } from "../../store/actions";
@@ -25,7 +25,7 @@ const Timer = ({ answer }) =>
                 dispatch(incrementIndex);
                 dispatch(resetTime);
             }
-            else if(currentIndex == 7)
+            else if(currentIndex === 7)
             {
                 dispatch(setResult(answer));
                 dispatch(setEndGame(true));
