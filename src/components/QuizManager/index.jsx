@@ -76,7 +76,7 @@ const QuizManager = () =>
                                     currentQuestion.answers.map((value, index) => (
                                         <label key={index} htmlFor={`answer${index}`}>
                                             {value}
-                                            <input id={`answer${index}`} name="answers" value={index} type="radio" />
+                                            <input id={`answer${index}`} name="answers" value={index} type="radio" defaultChecked={!index} />
                                         </label>
                                     ))
                                 }
