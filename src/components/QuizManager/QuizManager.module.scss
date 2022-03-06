@@ -1,0 +1,56 @@
+
+$white: #ccc;
+$blur: 5px;
+
+.wrapper
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(153,128,250);
+    background: radial-gradient(circle, 
+        rgba(153,128,250,0.9164040616246498) 0%, 
+        rgba(87,88,187,1) 100%);
+    color: $white;
+    
+    .game
+    {
+        min-width: 50vw;
+        max-width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 50px;
+        border-radius: 2em;
+        background: rgb(27,20,100);
+        background: radial-gradient(circle, 
+            rgba(27,20,100,0.865983893557423) 0%, 
+            rgba(6,82,221,0.8855917366946778) 100%);
+        box-shadow: 1px 1px $blur $white,
+            -1px 1px $blur $white,
+            1px -1px $blur $white,
+            -1px -1px $blur $white;
+
+        h1
+        {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        button
+        {
+            display: block;
+            margin: 40px auto 0;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 2rem;
+        }
+
+    }
+
+}
