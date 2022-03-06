@@ -5,6 +5,13 @@ import { incrementIndex, resetTime, setResult, setEndGame } from '../../store/ac
 import Timer from "../Timer";
 import styles from './QuizManager.module.scss';
 
+
+const checkPoints = (solutions, result) =>
+(
+    solutions.filter((value, index) => parseInt(value) === parseInt(result[index]))
+);
+
+
 const QuizManager = () =>
 {
     const dispatch = useDispatch();
@@ -19,18 +26,14 @@ const QuizManager = () =>
     const result = useSelector((state) => state.result);
 
 
-    const checkPoints = () =>
-    (
-        solutions.filter((value, index) => value == result[index])
-    );
 
     useEffect(() => 
     {
         if(endGame)
         {
-            setPoints(() => checkPoints().length);
+            setPoints(() => checkPoints(solutions, result).length);
         }
-    }, [endGame]);
+    }, [endGame, solutions, result]);
 
     // Events
     const handleChange = (e) =>
@@ -48,7 +51,7 @@ const QuizManager = () =>
                 dispatch(incrementIndex);
                 dispatch(resetTime);
             }
-            else if(currentIndex == 7)
+            else if(currentIndex === 7)
             {
                 dispatch(setEndGame(true));
             }
