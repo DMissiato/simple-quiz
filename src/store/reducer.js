@@ -1,5 +1,5 @@
 
-const timeForQuestion = 1;
+const timeForQuestion = 30;
 
 const initState =
 {
